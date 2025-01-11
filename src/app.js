@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser  from "cookie-parser";
 
 const app =express()
+//Below are all configurations which are used to handle the data coming from the sources like json, url, cookies etc
 // this below line are used for CORS while we are getting data from different resources or servers, we can use all different origins 
 // coming from many servers and we can create whitelist from here 
 app.use(cors({
@@ -20,4 +21,18 @@ app.use(express.static("public"))
 
 //when you want make CRED operations or any other manipulation on cookies
 app.use(cookieParser())
-export default app
+
+
+
+//Routes import
+
+import userRouter from "./routes/user.routes.js";  //from here it will rediret to user routes
+
+
+
+//routes declaration 
+app.use("/api/v1/users",userRouter) //when the application hits it wil come from api/v1/users and the it will redirect to userRouter in the top
+
+
+
+export {app}

@@ -1,1 +1,1 @@
-export const DB_NAME = "Videoblix"
+export const DB_NAME = "videoblix"
