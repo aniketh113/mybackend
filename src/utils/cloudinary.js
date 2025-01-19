@@ -16,6 +16,7 @@ try {
     })
     //file upload success
     console.log("upload success on cloudinary ",response.url);
+    fs.unlinkSync(localFilePath)
     return response; //return the response from cloudinary
 } catch (error) {
     fs.unlinkSync(localFilePath) //remove locally saved temp file as the upload operation got failed.
